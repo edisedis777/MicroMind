@@ -7,7 +7,12 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon-192.png', 'icon-512.png'],
+      includeAssets: [
+        'icon-192.png',
+        'icon-512.png',
+        'screenshot1.png',
+        'screenshot2.png'
+      ],
       manifest: {
         name: 'MicroMind - Daily Reflection',
         short_name: 'MicroMind',
@@ -15,8 +20,15 @@ export default defineConfig({
         theme_color: '#6366f1',
         background_color: '#fafaf9',
         display: 'standalone',
+        orientation: 'portrait',
         scope: '/',
         start_url: '/',
+        id: '/?source=pwa',
+        dir: 'ltr',
+        categories: ['education', 'productivity'],
+        launch_handler: {
+          client_mode: 'auto'
+        },
         icons: [
           {
             src: 'icon-192.png',
@@ -26,6 +38,19 @@ export default defineConfig({
           {
             src: 'icon-512.png',
             sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable'
+          }
+        ],
+        screenshots: [
+          {
+            src: 'screenshot1.png',
+            sizes: '1080x1920',
+            type: 'image/png'
+          },
+          {
+            src: 'screenshot2.png',
+            sizes: '1080x1920',
             type: 'image/png'
           }
         ]
