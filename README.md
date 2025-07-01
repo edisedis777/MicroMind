@@ -15,11 +15,13 @@ In our fast-paced world, we often rush from one task to another without taking t
 ### The Three Pillars of Daily Reflection
 
 1. **📚 Learning** - "What did I learn today?"
+
    - Reinforces knowledge retention
    - Helps identify patterns in your learning journey
    - Celebrates daily growth, no matter how small
 
 2. **❓ Questioning** - "What's one question I have?"
+
    - Cultivates curiosity and critical thinking
    - Identifies areas for future exploration
    - Maintains a beginner's mindset
@@ -32,6 +34,7 @@ In our fast-paced world, we often rush from one task to another without taking t
 ## ✨ Features
 
 ### 🌟 Core Functionality
+
 - **Daily Entry Interface** - Clean, distraction-free prompts for your three daily reflections
 - **Auto-save** - Your thoughts are automatically saved as you type (no more lost entries!)
 - **Streak Tracking** - Visual motivation showing your consecutive days of reflection
@@ -39,6 +42,7 @@ In our fast-paced world, we often rush from one task to another without taking t
 - **Export Options** - Download your journal in Markdown, JSON, or plain text formats
 
 ### 🎨 User Experience
+
 - **Mobile-First Design** - Optimized for smartphones with responsive desktop support
 - **Dark/Light Mode** - Choose your preferred theme for comfortable reading
 - **Offline Support** - Works completely offline once installed
@@ -46,6 +50,7 @@ In our fast-paced world, we often rush from one task to another without taking t
 - **Privacy-First** - All data stays on your device, no accounts required
 
 ### 📊 Insights & Analytics
+
 - **Entry Statistics** - Track your total entries and monthly progress
 - **Word Count** - See how much you've written over time
 - **Completion Indicators** - Visual feedback when you complete your daily reflection
@@ -53,55 +58,65 @@ In our fast-paced world, we often rush from one task to another without taking t
 ## 🛠 Tech Stack
 
 ### Frontend Framework
+
 - **React 18** - Modern React with hooks and functional components
 - **TypeScript** - Type-safe development for better code quality
 - **Vite** - Lightning-fast build tool and development server
 
 ### Styling & UI
+
 - **Tailwind CSS** - Utility-first CSS framework for rapid UI development
 - **Lucide React** - Beautiful, consistent icon library
 - **Custom Design System** - Carefully crafted color palette and spacing
 
 ### State Management & Storage
+
 - **React Hooks** - useState, useEffect, and custom hooks for state management
 - **localStorage** - Client-side persistence with custom useLocalStorage hook
 - **TypeScript Interfaces** - Strongly typed data structures
 
 ### PWA Features
+
 - **Vite PWA Plugin** - Automated service worker generation
 - **Web App Manifest** - Native app-like installation experience
 - **Offline Caching** - Full offline functionality with Workbox
 - **Service Worker** - Background sync and caching strategies
 
 ### Development Tools
+
 - **ESLint** - Code linting with React and TypeScript rules
 - **PostCSS** - CSS processing with Autoprefixer
 - **Modern Browser APIs** - File download, localStorage, and PWA features
 
 ### Deployment
+
 - **Netlify** - Continuous deployment with automatic builds
 - **Custom Domain** - Professional domain setup at micromind.netlify.app
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 16+ and npm/yarn
 - Modern web browser with PWA support
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/micromind.git
    cd micromind
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -124,6 +139,7 @@ npm run preview
 Here's what a typical day with MicroMind looks like:
 
 ### Morning Reflection (2 minutes)
+
 ```
 📚 What did I learn today?
 "Discovered that TypeScript's 'as const' assertion can make arrays readonly and preserve literal types"
@@ -136,7 +152,9 @@ Here's what a typical day with MicroMind looks like:
 ```
 
 ### The Power of Consistency
+
 After 30 days, you'll have:
+
 - 30 new learnings documented
 - 30 questions to explore further
 - 30 ideas captured for future projects
@@ -185,17 +203,20 @@ MicroMind is built with privacy as a core principle:
 MicroMind's design follows these principles:
 
 ### Minimalism
+
 - Clean, uncluttered interface that focuses attention on reflection
 - Generous white space and thoughtful typography
 - Subtle animations that enhance rather than distract
 
 ### Accessibility
+
 - High contrast ratios for readability
 - Keyboard navigation support
 - Screen reader friendly markup
 - Responsive design for all devices
 
 ### Emotional Design
+
 - Warm, calming color palette
 - Gentle feedback and micro-interactions
 - Celebration of completion without being overwhelming
@@ -235,5 +256,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Start your reflection journey today. Small thoughts, big growth.** 🌱
-
-**Live Demo:** [https://micromind.netlify.app/](https://micromind.netlify.app/)
