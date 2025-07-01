@@ -2,6 +2,10 @@
 
 A beautiful, minimalist Progressive Web App (PWA) designed to help you develop a daily habit of reflection and mindful learning. MicroMind encourages you to capture three simple but powerful insights each day in under 5 minutes.
 
+## 🌐 Live Demo
+
+**Try MicroMind now:** [https://micromind.netlify.app/](https://micromind.netlify.app/)
+
 ![MicroMind Preview](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop&crop=center)
 
 ## 🎯 Purpose & Philosophy
@@ -73,6 +77,10 @@ In our fast-paced world, we often rush from one task to another without taking t
 - **ESLint** - Code linting with React and TypeScript rules
 - **PostCSS** - CSS processing with Autoprefixer
 - **Modern Browser APIs** - File download, localStorage, and PWA features
+
+### Deployment
+- **Netlify** - Continuous deployment with automatic builds
+- **Custom Domain** - Professional domain setup at micromind.netlify.app
 
 ## 🚀 Getting Started
 
@@ -227,3 +235,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Start your reflection journey today. Small thoughts, big growth.** 🌱
+
+**Live Demo:** [https://micromind.netlify.app/](https://micromind.netlify.app/)

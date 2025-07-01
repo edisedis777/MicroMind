@@ -4,41 +4,63 @@ import { useLocalStorage } from './useLocalStorage';
 
 export function useEntries() {
   const [entries, setEntries] = useLocalStorage<DailyEntry[]>('micromind-entries', []);
-  const [todaysEntry, setTodaysEntry] = useState<DailyEntry | null>(null);
+  const [currentEntry, setCurrentEntry] = useState<DailyEntry | null>(null);
 
   const today = new Date().toISOString().split('T')[0];
 
   useEffect(() => {
-    const existing = entries.find(entry => entry.date === today);
-    if (existing) {
-      setTodaysEntry(existing);
-    } else {
-      setTodaysEntry({
-        date: today,
-        learned: '',
-        question: '',
-        idea: '',
-        timestamp: Date.now()
-      });
-    }
-  }, [entries, today]);
+    // Initialize with a new empty entry
+    setCurrentEntry({
+      id: generateId(),
+      date: today,
+      learned: '',
+      question: '',
+      idea: '',
+      timestamp: Date.now()
+    });
+  }, [today]);
+
+  const generateId = () => {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+  };
 
   const saveEntry = (entry: DailyEntry) => {
-    const updatedEntries = entries.filter(e => e.date !== entry.date);
+    // Only save if there's actual content
+    const hasContent = entry.learned.trim() || entry.question.trim() || entry.idea.trim();
+    if (!hasContent) return;
+
+    const updatedEntries = entries.filter(e => e.id !== entry.id);
     updatedEntries.push({ ...entry, timestamp: Date.now() });
-    setEntries(updatedEntries.sort((a, b) => b.date.localeCompare(a.date)));
-    setTodaysEntry(entry);
+    setEntries(updatedEntries.sort((a, b) => b.timestamp - a.timestamp));
+  };
+
+  const deleteEntry = (entryId: string) => {
+    const updatedEntries = entries.filter(e => e.id !== entryId);
+    setEntries(updatedEntries);
+  };
+
+  const createNewEntry = () => {
+    const newEntry = {
+      id: generateId(),
+      date: today,
+      learned: '',
+      question: '',
+      idea: '',
+      timestamp: Date.now()
+    };
+    setCurrentEntry(newEntry);
+    return newEntry;
   };
 
   const getStreak = () => {
     if (entries.length === 0) return 0;
     
-    const sortedEntries = [...entries].sort((a, b) => b.date.localeCompare(a.date));
+    const uniqueDates = [...new Set(entries.map(e => e.date))].sort((a, b) => b.localeCompare(a));
     let streak = 0;
     let currentDate = new Date();
     
-    for (const entry of sortedEntries) {
-      const entryDate = new Date(entry.date);
+    for (const dateStr of uniqueDates) {
+      const entryDate = new Date(dateStr);
       const daysDiff = Math.floor((currentDate.getTime() - entryDate.getTime()) / (1000 * 60 * 60 * 24));
       
       if (daysDiff === streak) {
@@ -54,8 +76,11 @@ export function useEntries() {
 
   return {
     entries,
-    todaysEntry,
+    currentEntry,
+    setCurrentEntry,
     saveEntry,
+    deleteEntry,
+    createNewEntry,
     getStreak: getStreak()
   };
 }

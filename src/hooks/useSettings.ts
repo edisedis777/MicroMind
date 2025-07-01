@@ -7,17 +7,12 @@ export function useSettings() {
     lastEntryDate: ''
   });
 
-  const toggleDarkMode = () => {
-    setSettings(prev => ({ ...prev, darkMode: !prev.darkMode }));
-  };
-
   const updateLastEntryDate = (date: string) => {
     setSettings(prev => ({ ...prev, lastEntryDate: date }));
   };
 
   return {
     settings,
-    toggleDarkMode,
     updateLastEntryDate
   };
 }
