@@ -16,30 +16,33 @@ export default defineConfig({
       manifest: {
         name: 'MicroMind - Daily Reflection',
         short_name: 'MicroMind',
+        start_url: 'https://micromind.netlify.app/',
+        display: 'standalone',
+        background_color: '#fafaf9',
+        lang: 'en',
+        scope: '/',
         description: 'A daily reflection and knowledge tracker to boost learning and self-awareness',
         theme_color: '#6366f1',
-        background_color: '#fafaf9',
-        display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
-        id: '/?source=pwa',
+        id: 'main-source=pwa',
         dir: 'ltr',
-        categories: ['education', 'productivity'],
+        categories: ['education', 'health', 'productivity'],
         launch_handler: {
           client_mode: 'auto'
         },
         icons: [
           {
-            src: 'icon-192.png',
-            sizes: '192x192',
-            type: 'image/png'
+            src: 'icon-512-maskable.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
+
           },
           {
             src: 'icon-512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
           }
         ],
         screenshots: [
